@@ -19,7 +19,7 @@ class TestOrders:
         assert Key.TRACK in response_json, (
             'В ответе отсутствует поле "track"'
         )
-        assert response_json[Key.TRACK] > 0, (
+        assert response_json.get(Key.TRACK) > 0, (
             'Значение "track" должно быть положительным. '
             f'Получено: "{response_json.get(Key.TRACK)}"'
         )
